@@ -1,19 +1,21 @@
 <?php
 
-class EveSDEServiceProvider extends \Illuminate\Support\ServiceProvider {
+namespace ViKon\EveSDE;
+
+use Illuminate\Support\ServiceProvider;
+
+class EveSDEServiceProvider extends ServiceProvider {
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
     public function boot() {
-        $this->publishes([
-            __DIR__ . '/../../database/migrations/' => base_path('/database/migrations'),
-        ], 'migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
     }
 
     /**
-     * Register the service provider.
+     * Register bindings in the container.
      *
      * @return void
      */
