@@ -15,7 +15,7 @@ class CreateCrpNPCDivisionsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('crp_n_p_c_divisions', function (Blueprint $table) {
+        Schema::create('crp_npc_divisions', function (Blueprint $table) {
             $table->smallInteger('division_id');
             $table->string('division_name', 100)
                 ->nullable()
@@ -40,6 +40,6 @@ class CreateCrpNPCDivisionsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('crp_n_p_c_divisions');
+        Schema::drop('crp_npc_divisions');
     }
 }

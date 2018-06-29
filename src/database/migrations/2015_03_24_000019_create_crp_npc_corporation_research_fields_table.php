@@ -15,7 +15,7 @@ class CreateCrpNPCCorporationResearchFieldsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('crp_n_p_c_corporation_research_fields', function (Blueprint $table) {
+        Schema::create('crp_npc_corporation_research_fields', function (Blueprint $table) {
             $table->integer('skill_id');
             $table->integer('corporation_id');
 
@@ -23,13 +23,13 @@ class CreateCrpNPCCorporationResearchFieldsTable extends Migration {
             $table->primary(['skill_id', 'corporation_id'], 'prim');
 
 
-            $table->foreign('skill_id', 'crp_n_p_c_corporation_research_fields_ibfk_1')
+            $table->foreign('skill_id', 'crp_npc_corporation_research_fields_ibfk_1')
                 ->references('type_id')
                 ->on('inv_types');
 
-            $table->foreign('corporation_id', 'crp_n_p_c_corporation_research_fields_ibfk_2')
+            $table->foreign('corporation_id', 'crp_npc_corporation_research_fields_ibfk_2')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
         });
     }
@@ -40,6 +40,6 @@ class CreateCrpNPCCorporationResearchFieldsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('crp_n_p_c_corporation_research_fields');
+        Schema::drop('crp_npc_corporation_research_fields');
     }
 }

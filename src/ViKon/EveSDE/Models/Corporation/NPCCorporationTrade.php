@@ -30,14 +30,14 @@ class NPCCorporationTrade extends Model {
      *
      * @var string
      */
-    protected $table = 'crp_n_p_c_corporation_trades';
+    protected $table = 'crp_npc_corporation_trades';
 
     /**
      * The database table used by the model (mongodb).
      *
      * @var string
      */
-    protected $collection = 'crp_n_p_c_corporation_trades';
+    protected $collection = 'crp_npc_corporation_trades';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

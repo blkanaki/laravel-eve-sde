@@ -30,14 +30,14 @@ class NPCCorporationResearchField extends Model {
      *
      * @var string
      */
-    protected $table = 'crp_n_p_c_corporation_research_fields';
+    protected $table = 'crp_npc_corporation_research_fields';
 
     /**
      * The database table used by the model (mongodb).
      *
      * @var string
      */
-    protected $collection = 'crp_n_p_c_corporation_research_fields';
+    protected $collection = 'crp_npc_corporation_research_fields';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

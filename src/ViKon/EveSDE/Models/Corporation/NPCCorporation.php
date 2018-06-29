@@ -160,14 +160,14 @@ class NPCCorporation extends Model {
      *
      * @var string
      */
-    protected $table = 'crp_n_p_c_corporations';
+    protected $table = 'crp_npc_corporations';
 
     /**
      * The database table used by the model (mongodb).
      *
      * @var string
      */
-    protected $collection = 'crp_n_p_c_corporations';
+    protected $collection = 'crp_npc_corporations';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -200,21 +200,21 @@ class NPCCorporation extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function nPCCorporationDivisions() {
+    public function npcCorporationDivisions() {
         return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'corporation_id', 'corporation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function nPCCorporationResearchFields() {
+    public function npcCorporationResearchFields() {
         return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField', 'corporation_id', 'corporation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function nPCCorporationTrades() {
+    public function npcCorporationTrades() {
         return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationTrade', 'corporation_id', 'corporation_id');
     }
 

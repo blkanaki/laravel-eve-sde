@@ -15,7 +15,7 @@ class CreateCrpNPCCorporationsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('crp_n_p_c_corporations', function (Blueprint $table) {
+        Schema::create('crp_npc_corporations', function (Blueprint $table) {
             $table->integer('corporation_id');
             $table->string('size', 1)
                 ->nullable()
@@ -112,33 +112,33 @@ class CreateCrpNPCCorporationsTable extends Migration {
             $table->index('icon_id', 'icon_id');
 
 
-            $table->foreign('solar_system_id', 'crp_n_p_c_corporations_ibfk_1')
+            $table->foreign('solar_system_id', 'crp_npc_corporations_ibfk_1')
                 ->references('solar_system_id')
                 ->on('map_solar_systems');
 
-            $table->foreign('investor_id1', 'crp_n_p_c_corporations_ibfk_2')
+            $table->foreign('investor_id1', 'crp_npc_corporations_ibfk_2')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('investor_id2', 'crp_n_p_c_corporations_ibfk_3')
+            $table->foreign('investor_id2', 'crp_npc_corporations_ibfk_3')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('investor_id3', 'crp_n_p_c_corporations_ibfk_4')
+            $table->foreign('investor_id3', 'crp_npc_corporations_ibfk_4')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('investor_id4', 'crp_n_p_c_corporations_ibfk_5')
+            $table->foreign('investor_id4', 'crp_npc_corporations_ibfk_5')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('friend_id', 'crp_n_p_c_corporations_ibfk_6')
+            $table->foreign('friend_id', 'crp_npc_corporations_ibfk_6')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('enemy_id', 'crp_n_p_c_corporations_ibfk_7')
+            $table->foreign('enemy_id', 'crp_npc_corporations_ibfk_7')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
         });
     }
@@ -149,6 +149,6 @@ class CreateCrpNPCCorporationsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('crp_n_p_c_corporations');
+        Schema::drop('crp_npc_corporations');
     }
 }

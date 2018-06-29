@@ -15,7 +15,7 @@ class CreateCrpNPCCorporationDivisionsTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('crp_n_p_c_corporation_divisions', function (Blueprint $table) {
+        Schema::create('crp_npc_corporation_divisions', function (Blueprint $table) {
             $table->integer('corporation_id');
             $table->smallInteger('division_id');
             $table->smallInteger('size')
@@ -26,13 +26,13 @@ class CreateCrpNPCCorporationDivisionsTable extends Migration {
             $table->primary(['corporation_id', 'division_id'], 'prim');
 
 
-            $table->foreign('corporation_id', 'crp_n_p_c_corporation_divisions_ibfk_1')
+            $table->foreign('corporation_id', 'crp_npc_corporation_divisions_ibfk_1')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('division_id', 'crp_n_p_c_corporation_divisions_ibfk_2')
+            $table->foreign('division_id', 'crp_npc_corporation_divisions_ibfk_2')
                 ->references('division_id')
-                ->on('crp_n_p_c_divisions');
+                ->on('crp_npc_divisions');
 
         });
     }
@@ -43,6 +43,6 @@ class CreateCrpNPCCorporationDivisionsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('crp_n_p_c_corporation_divisions');
+        Schema::drop('crp_npc_corporation_divisions');
     }
 }

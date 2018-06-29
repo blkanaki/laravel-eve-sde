@@ -42,14 +42,14 @@ class NPCDivision extends Model {
      *
      * @var string
      */
-    protected $table = 'crp_n_p_c_divisions';
+    protected $table = 'crp_npc_divisions';
 
     /**
      * The database table used by the model (mongodb).
      *
      * @var string
      */
-    protected $collection = 'crp_n_p_c_divisions';
+    protected $collection = 'crp_npc_divisions';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -61,7 +61,7 @@ class NPCDivision extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function nPCCorporationDivisions() {
+    public function npcCorporationDivisions() {
         return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'division_id', 'division_id');
     }
 }

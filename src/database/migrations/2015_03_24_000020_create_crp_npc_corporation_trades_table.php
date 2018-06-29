@@ -15,7 +15,7 @@ class CreateCrpNPCCorporationTradesTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('crp_n_p_c_corporation_trades', function (Blueprint $table) {
+        Schema::create('crp_npc_corporation_trades', function (Blueprint $table) {
             $table->integer('corporation_id');
             $table->integer('type_id');
 
@@ -23,11 +23,11 @@ class CreateCrpNPCCorporationTradesTable extends Migration {
             $table->primary(['corporation_id', 'type_id'], 'prim');
 
 
-            $table->foreign('corporation_id', 'crp_n_p_c_corporation_trades_ibfk_1')
+            $table->foreign('corporation_id', 'crp_npc_corporation_trades_ibfk_1')
                 ->references('corporation_id')
-                ->on('crp_n_p_c_corporations');
+                ->on('crp_npc_corporations');
 
-            $table->foreign('type_id', 'crp_n_p_c_corporation_trades_ibfk_2')
+            $table->foreign('type_id', 'crp_npc_corporation_trades_ibfk_2')
                 ->references('type_id')
                 ->on('inv_types');
 
@@ -40,6 +40,6 @@ class CreateCrpNPCCorporationTradesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('crp_n_p_c_corporation_trades');
+        Schema::drop('crp_npc_corporation_trades');
     }
 }
